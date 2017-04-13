@@ -8,6 +8,7 @@ var handleSuccessCallback = function(data) {
     newsItems = [];
     var news = JSON.parse(data).news;
     _.map(news, function(item) {
+        var imageIcon = item.important ? "images/icons/important.png" : "images/icons/newsItem.png";
         newsItems.push({
             properties : {
                 color : "black",
@@ -17,8 +18,10 @@ var handleSuccessCallback = function(data) {
             subtitle : { text : item.subtitle },
             title : { text : item.title },
             template : 'newsTemplate',
-            container: { height: Ti.UI.SIZE, bottom: 5 },
-            message : {text: item.message}
+            wrapper: {height: Ti.UI.SIZE, bottom: 5, width: Ti.UI.FILL},
+            container: { height: Ti.UI.SIZE,  width: "85%"},
+            message : {text: item.message},
+            imageIcon: {image: imageIcon, width: "10%", left: 5}
         });
     });
     if (newsItems.length > 0) {

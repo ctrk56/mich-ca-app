@@ -4,9 +4,12 @@
 			<ListView id="newsList">
 				<Templates>
 	                <ItemTemplate name="newsTemplate">
-	                	<View id="container" bindId="container" layout="vertical">
-		                    <Label bindId="title" id="title"></Label>
-		                    <Label bindId="subtitle" id="subtitle"></Label>
+	                	<View id="wrapper" bindId="wrapper" layout="horizontal">
+	                		<ImageView id="imageIcon" bindId="imageIcon"></ImageView>
+		                    <View id="container" bindId="container" layout="vertical">
+			                    <Label bindId="title" id="title"></Label>
+			                    <Label bindId="subtitle" id="subtitle"></Label>
+		                    </View>
 	                	</View>
 	                </ItemTemplate>
 	            </Templates>

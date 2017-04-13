@@ -1,4 +1,6 @@
-
-".container" : {
-  
+"#subtitle" : {
+	font: {
+		fontWeight: 'bold',
+		fontSize: 16
+	}
 }
