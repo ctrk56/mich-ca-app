@@ -1,0 +1,28 @@
+"Label": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: "#000",
+	verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_LEFT
+},
+"#welcomeMessage": {
+	font: {
+		fontSize: 16
+	},
+}
+
+"TextField": {
+	height: Titanium.UI.SIZE,
+	borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+	width: Ti.UI.FILL,
+	top: 10,
+	maxLength: 20,
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	right: 10,
+	left: 20,
+	autocapitalization: false,
+	autocorrect: false,
+	keyboardType: Ti.UI.KEYBOARD_TYPE_EMAIL
+}
+"#loggedInView": {
+	visible: false
+}

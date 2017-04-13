@@ -1,0 +1,59 @@
+"#aboutusList": {
+	separatorColor: "#e3e4e4",
+	listSeparatorInsets: {
+		left: 0,
+		right: 0
+	},
+	color: 'black',
+}
+"#name": {
+	font: {fontWeight : 'bold', fontSize: 16},
+	left: 10,
+	top: 3
+}
+"#designation": {
+	font: {
+		fontSize: 12
+	},
+	ellipsize: true,
+	wordWrap: true,
+	width: "90%",
+	right: 10,
+	top: 3
+}
+"#contact": {
+	font: {
+		fontSize: 12
+	},
+	ellipsize: true,
+	wordWrap: true,
+	width: "90%",
+	right: 10,
+	top: 3
+}
+"#container": {
+	height: Titanium.UI.SIZE,
+	width: Titanium.UI.FILL,
+	bottom: 10,
+	layout: "vertical"
+}
+"#designation[platform=android]": {
+	font: {
+		fontSize: 16
+	}
+}
+"#contact[platform=android]": {
+	font: {
+		fontSize: 16
+	}
+}
+"#name[platform=android]": {
+	font: {
+		fontWeight: 'bold',
+		fontSize:20
+	}
+}
+
+"#aboutusTab[platform=ios]": {
+	icon : "images/icons/committee.png"
+}

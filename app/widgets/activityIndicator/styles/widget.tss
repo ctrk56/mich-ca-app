@@ -1,0 +1,32 @@
+"#blocker":{
+	top: 0,
+	left: 0,
+	height: Ti.UI.FILL,
+	width: Ti.UI.FILL,
+	backgroundColor:'transparent',
+	zIndex:1000,
+}
+
+"#loadingView":{
+	height:150,
+	width:175,
+	backgroundColor:'#CC000000',
+	borderRadius:10,
+	zIndex: 5
+}
+
+"#loadingView[platform=android]":{
+	elevation: Alloy.Globals.Screen.ELEVATION_24
+}
+
+"#ai":{
+	color:'white'
+}
+
+"#ai[platform=android]":{
+	style:Ti.UI.ActivityIndicatorStyle.BIG
+}
+
+"#ai[platform=ios]":{
+	style:Ti.UI.iPhone.ActivityIndicatorStyle.BIG
+}

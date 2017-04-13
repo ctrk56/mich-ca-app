@@ -1,0 +1,7 @@
+<Alloy>
+	<View id="blocker" visible="false">
+		<View id="loadingView" elevation="24">
+			<ActivityIndicator id="ai" />
+		</View>
+	</View>
+</Alloy>

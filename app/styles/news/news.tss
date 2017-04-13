@@ -1,0 +1,43 @@
+"#newsList": {
+	separatorColor: "#e3e4e4",
+	listSeparatorInsets: {
+		left: 0,
+		right: 0
+	},
+	color: 'black'
+}
+
+"#subtitle": {
+	font: {
+		fontSize: 12
+	},
+	ellipsize: true,
+	wordWrap: true,
+	width: "90%",
+	left: 10,
+	top: 3
+}
+"#title": {
+	font: {
+		fontWeight: 'bold',
+		fontSize: 16
+	},
+	left: 10,
+	top: 3
+}
+"#subtitle[platform=android]": {
+	font: {
+		fontSize: 16
+	}
+}
+"#title[platform=android]": {
+	font: {
+		fontWeight: 'bold',
+		fontSize: 20
+	}
+}
+
+"#newsTab[platform=ios]": {
+	 icon : "images/icons/news.png"
+}
+

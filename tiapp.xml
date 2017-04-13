@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <id>com.ctrk.random</id>
+    <name>RandomApplication2</name>
+    <version>1.0</version>
+    <publisher>rkc001</publisher>
+    <url>http://mich-ca.org</url>
+    <description>undefined</description>
+    <copyright>2017 by rkc001</copyright>
+    <icon>appicon.png</icon>
+    <fullscreen>false</fullscreen>
+    <navbar-hidden>false</navbar-hidden>
+    <analytics>false</analytics>
+    <guid>0436c6fe-e386-46d1-9fff-0ac2294ce463</guid>
+    <property name="ti.ui.defaultunit" type="string">dp</property>
+    <property name="run-on-main-thread" type="bool">false</property>
+    <ios>
+        <enable-launch-screen-storyboard>true</enable-launch-screen-storyboard>
+        <use-app-thinning>true</use-app-thinning>
+        <plist>
+            <dict>
+                <key>UISupportedInterfaceOrientations~iphone</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                </array>
+                <key>UISupportedInterfaceOrientations~ipad</key>
+                <array>
+                    <string>UIInterfaceOrientationPortrait</string>
+                    <string>UIInterfaceOrientationPortraitUpsideDown</string>
+                    <string>UIInterfaceOrientationLandscapeLeft</string>
+                    <string>UIInterfaceOrientationLandscapeRight</string>
+                </array>
+                <key>UIRequiresPersistentWiFi</key>
+                <false/>
+                <key>UIPrerenderedIcon</key>
+                <false/>
+                <key>UIStatusBarHidden</key>
+                <false/>
+                <key>UIStatusBarStyle</key>
+                <string>UIStatusBarStyleDefault</string>
+            </dict>
+        </plist>
+    </ios>
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <manifest>
+            <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="23"/>
+            <supports-screens android:anyDensity="true"
+                android:largeScreens="true" android:normalScreens="true" android:smallScreens="false"/>
+            <application android:theme="@style/kitchensink">
+                <activity
+                	android:configChanges="keyboardHidden|orientation"
+                    android:label="Random Application Android" 
+                    android:name=".RandomapplicationActivity"
+                    android:launchMode="singleTop"/>
+            </application>
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+        </manifest>
+    </android>
+    <mobileweb>
+        <precache/>
+        <splash>
+            <enabled>true</enabled>
+            <inline-css-images>true</inline-css-images>
+        </splash>
+        <theme>default</theme>
+    </mobileweb>
+    <modules/>
+    <deployment-targets>
+        <target device="android">true</target>
+        <target device="ipad">true</target>
+        <target device="iphone">true</target>
+        <target device="mobileweb">false</target>
+        <target device="windows">false</target>
+    </deployment-targets>
+    <sdk-version>5.4.0.GA</sdk-version>
+    <plugins>
+        <plugin version="1.0">ti.alloy</plugin>
+    </plugins>
+    <property name="appc-app-id" type="string">58ed2dd31a348643f7fa1bd6</property>
+</ti:app>

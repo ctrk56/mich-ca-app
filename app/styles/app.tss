@@ -1,0 +1,53 @@
+"Window": {
+	backgroundColor: "white"
+}
+
+"Window[platform=ios]": {
+	barColor: Alloy.CFG.styles.tintColor,
+	navTintColor: "white",
+	translucent: false,
+	backButtonTitle: "",
+	titleAttributes: {
+		color: "white"
+	}
+}
+
+"Window[platform=android]": {
+	softKeyboardOnFocus: Ti.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS
+}
+
+"TabGroup[platform=ios]": {
+	activeTabIconTint: Alloy.CFG.styles.tintColor,
+	translucent: false,
+	backgroundColor: "white"
+}
+
+"ListItem": {
+	accessoryType: Ti.UI.LIST_ACCESSORY_TYPE_DISCLOSURE,
+	subtitleColor: "#777" // Titanium 6.1.0 and later
+}
+
+"Button": {
+	top: "10",
+	borderRadius: 5,
+	borderColor: "blue",
+	width: 100
+}
+
+"ListItem[platform=android]": {
+	color:"#000",
+	height: 50,
+	left: 15
+}
+
+"Label[platform=android]": {
+	color:"#000"
+}
+
+"TextField[platform=android]": {
+	color:"#000"
+}
+
+"TextArea[platform=android]": {
+	color:"#000"
+}

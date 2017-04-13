@@ -1,0 +1,17 @@
+<Alloy>
+	<Tab id="groundsTab" title="Grounds">
+		<Window id="groundsWindow" title="Cricket Grounds">
+			<ListView id="groundsList">
+				<Templates>
+	                <ItemTemplate name="groundsTemplate">
+	                	<View id="container">
+		                    <Label bindId="name" id="name"></Label>
+		                    <Label bindId="address" id="address"/>
+	                	</View>
+	                </ItemTemplate>
+	            </Templates>
+			</ListView>
+			<Widget id="activityIndicator" src="activityIndicator" />
+		</Window>
+	</Tab>
+</Alloy>

@@ -1,0 +1,9 @@
+<Alloy>
+	<Tab id="teamsTab" title="Teams" icon="KS_nav_views.png">
+		<Window id="teamsWindow" title="Teams">
+			<ListView id="teamsList">
+
+			</ListView>
+		</Window>
+	</Tab>
+</Alloy>

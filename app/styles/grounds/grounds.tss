@@ -1,0 +1,43 @@
+"#groundsList": {
+	separatorColor: "#e3e4e4",
+	listSeparatorInsets: {
+		left: 0,
+		right: 0
+	},
+	color: 'black',
+}
+"#name": {
+	font: {fontWeight : 'bold', fontSize: 16},
+	left: 10,
+	top: 3
+}
+"#address": {
+	font: {
+		fontSize: 12
+	},
+	ellipsize: true,
+	wordWrap: true,
+	width: "90%",
+	left: 10,
+	top: 3
+}
+"#container": {
+	height: Titanium.UI.SIZE,
+	bottom: 10,
+	layout: "vertical"
+}
+"#address[platform=android]": {
+	font: {
+		fontSize: 16
+	}
+}
+"#name[platform=android]": {
+	font: {
+		fontWeight: 'bold',
+		fontSize:20
+	}
+}
+
+"#groundsTab[platform=ios]": {
+	icon : "images/icons/grounds.png"
+}

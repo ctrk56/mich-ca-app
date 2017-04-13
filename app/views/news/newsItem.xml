@@ -1,0 +1,6 @@
+<Alloy>
+	<Window id="newsItemWindow" class="container" title="" layout="vertical">
+		<Label id="subtitle" left="10" top="10"></Label>
+		<Label id="message" left="10" top="10"></Label>
+	</Window>
+</Alloy>

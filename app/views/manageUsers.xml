@@ -1,0 +1,7 @@
+<Alloy>
+	<Tab id="manageUsersTab" title="Manage Users" icon="KS_nav_views.png">
+		<Window id="manageUsersWindow" title="Manage Users">
+			<Label id="label1" color="#999">Manage Users Window</Label>
+		</Window>
+	</Tab>
+</Alloy>

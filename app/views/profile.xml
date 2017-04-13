@@ -1,0 +1,29 @@
+<Alloy>
+	<Tab id="profileTab" title="Profile" icon="KS_nav_views.png">
+		<Window id="profileWindow" title="Profile">
+			<View id="loginView">
+				<View height="Ti.UI.SIZE" width="Ti.UI.FILL" top="30" layout="vertical">
+					<View left="10" top="0" layout="vertical" height="Ti.UI.SIZE" width="Ti.UI.FILL">
+						<Label>User ID:</Label>
+						<TextField id="userId" color="black"></TextField>
+					</View>
+					<View left="10" top="10" layout="vertical" height="Ti.UI.SIZE" width="Ti.UI.FILL">
+						<Label>Password:</Label>
+						<TextField id="passowrd" passwordMask="true" color="black"></TextField>
+					</View>
+					<View top="20" height="Ti.UI.SIZE" width="Ti.UI.FILL">
+						<Button id="login" onClick="loginSubmit">Sign In</Button>
+					</View>
+				</View>
+			</View>
+			<View id="loggedInView">
+				<View id="logoutView" height="Ti.UI.SIZE" width="Ti.UI.SIZE" top="10">
+					<Button id="logout" onClick="logoutSubmit">Sign Out</Button>
+				</View>
+				<View id="welcomeMessageView" height="Ti.UI.SIZE" width="Ti.UI.SIZE" bottom="10">
+					<Label id="welcomeMessage">Welcome to testing OAuth</Label>
+				</View>
+			</View>
+		</Window>
+	</Tab>
+</Alloy>

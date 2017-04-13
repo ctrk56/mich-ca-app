@@ -1,0 +1,19 @@
+{
+    "global": {
+        "styles": {
+            "tintColor": "#c91326",
+            "iconFontFamily": "icomoon"
+        }
+    },
+    "env:development": {},
+    "env:test": {},
+    "env:production": {},
+    "os:android": {},
+    "os:blackberry": {},
+    "os:ios": {},
+    "os:mobileweb": {},
+    "os:windows": {},
+    "dependencies": {
+        "activityIndicator": "1.0"
+    }
+}

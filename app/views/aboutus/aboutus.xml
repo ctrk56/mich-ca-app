@@ -1,0 +1,18 @@
+<Alloy>
+	<Tab id="aboutusTab" title="Committee">
+		<Window id="aboutusWindow" title="Committee">
+			<ListView id="aboutusList">
+				<Templates>
+	                <ItemTemplate name="aboutusTemplate">
+	                	<View id="container" bindId="container">
+		                    <Label bindId="name" id="name"></Label>
+		                    <Label bindId="designation" id="designation"/>
+		                    <Label bindId="contact" id="contact"/>
+	                	</View>
+	                </ItemTemplate>
+	            </Templates>
+			</ListView>
+			<Widget id="activityIndicator" src="activityIndicator" />
+		</Window>
+	</Tab>
+</Alloy>

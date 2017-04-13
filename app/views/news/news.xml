@@ -1,0 +1,17 @@
+<Alloy>
+	<Tab id="newsTab" title="News">
+		<Window id="newsWindow" title="News">
+			<ListView id="newsList">
+				<Templates>
+	                <ItemTemplate name="newsTemplate">
+	                	<View id="container" bindId="container" layout="vertical">
+		                    <Label bindId="title" id="title"></Label>
+		                    <Label bindId="subtitle" id="subtitle"></Label>
+	                	</View>
+	                </ItemTemplate>
+	            </Templates>
+			</ListView>
+			<Widget id="activityIndicator" src="activityIndicator" />
+		</Window> 
+	</Tab>
+</Alloy>

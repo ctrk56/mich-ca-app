@@ -1,0 +1,7 @@
+"#teamsList": {
+	separatorColor: "#e3e4e4",
+	listSeparatorInsets: {
+		left: 0,
+		right: 0
+	}
+}
