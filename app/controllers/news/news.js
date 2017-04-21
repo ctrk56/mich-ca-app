@@ -1,7 +1,7 @@
 var APICalls = require("apiCalls");
 var Util = require("util");
 var args = $.args;
-var NEWS_URL = "https://ctrk56.github.io/mich-ca/news.json";
+var NEWS_URL = Alloy.Globals.URL.NEWS;
 var newsItems = [];
 
 var handleSuccessCallback = function(data) {

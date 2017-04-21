@@ -2,9 +2,9 @@ var APICalls = require("apiCalls");
 var Util = require("util");
 var args = $.args;
 var groundsItems = [];
-var GROUNDS_URL = "https://ctrk56.github.io/mich-ca/grounds.json";
-var ANDROID_LINK = "https://www.google.com/maps/place/";
-var IOS_LINK = "http://maps.apple.com/?address=";
+var GROUNDS_URL = Alloy.Globals.URL.GROUNDS;
+var GOOGLE_MAPS = Alloy.Globals.URL.GOOGLE_MAPS;
+var APPLE_MAPS = Alloy.Globals.URL.APPLE_MAPS;
 
 var handleSuccessCallback = function(data) {
     groundsItems = [];
@@ -13,9 +13,9 @@ var handleSuccessCallback = function(data) {
         var url = item.address+ "+" + item.city + "+" + item.state + "+" + item.zip;
         url=url.replace(" ", "+");
         if(OS_IOS) {
-            url = IOS_LINK + url;
+            url = APPLE_MAPS + url;
         } else {
-            url = ANDROID_LINK + url;
+            url = GOOGLE_MAPS + url;
         }
         groundsItems.push({
             properties: {

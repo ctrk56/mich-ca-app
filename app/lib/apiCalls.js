@@ -41,6 +41,17 @@ APICalls.request = function(uri, options) {
                 buttonNames:['OK'],
         }).show();
     }
-}; 
+};
+
+APICalls.customLabel = function(text, boldText) {
+    return Titanium.UI.createAttributedString({
+        text: text,
+        attributes: [{
+            type: Ti.UI.ATTRIBUTE_FONT,
+            value: { fontWeight: 'bold' },
+            range: [text.indexOf(boldText), (boldText).length]
+        }]
+    });
+};
 
 module.exports = APICalls; 

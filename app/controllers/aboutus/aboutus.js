@@ -2,7 +2,7 @@ var APICalls = require("apiCalls");
 var Util = require("util");
 var args = $.args;
 var aboutItems = [];
-var ABOUTUS_URL = "https://ctrk56.github.io/mich-ca/aboutus.json";
+var ABOUTUS_URL = Alloy.Globals.URL.ABOUTUS;
 
 var handleSuccessCallback = function(data) {
     aboutItems = [];
