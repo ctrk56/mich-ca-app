@@ -8,21 +8,23 @@ var handleSuccessCallback = function(data) {
     newsItems = [];
     var news = JSON.parse(data).news;
     _.map(news, function(item) {
-        var imageIcon = item.important ? "images/icons/important.png" : "images/icons/newsItem.png";
-        newsItems.push({
-            properties : {
-                color : "black",
-                accessoryTypeColor : "red",
-                accessoryType: Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE,
-            },
-            subtitle : { text : item.subtitle },
-            title : { text : item.title },
-            template : 'newsTemplate',
-            wrapper: {height: Ti.UI.SIZE, bottom: 5, width: Ti.UI.FILL},
-            container: { height: Ti.UI.SIZE,  width: "85%"},
-            message : {text: item.message},
-            imageIcon: {image: imageIcon, width: "10%", left: 5}
-        });
+    	if(item.active) {
+	        var imageIcon = item.important ? "images/icons/important.png" : "images/icons/newsItem.png";
+	        newsItems.push({
+	            properties : {
+	                color : "black",
+	                accessoryTypeColor : "red",
+	                accessoryType: Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE,
+	            },
+	            subtitle : { text : item.subtitle },
+	            title : { text : item.title },
+	            template : 'newsTemplate',
+	            wrapper: {height: Ti.UI.SIZE, bottom: 5, width: Ti.UI.FILL},
+	            container: { height: Ti.UI.SIZE,  width: "85%"},
+	            message : {text: item.message},
+	            imageIcon: {image: imageIcon, width: "10%", left: 5}
+	        });    		
+    	}
     });
     if (newsItems.length > 0) {
         var section = Ti.UI.createListSection({});
@@ -32,11 +34,10 @@ var handleSuccessCallback = function(data) {
     $.activityIndicator.hide();
 };
 
-var newItemWin = {};
 var itemClickHandler = function(e) {
     var item = e.section.getItemAt(e.itemIndex);
     if (newsItems.length > 0 && item.title) {
-        newItemWin = Alloy.createController('news/newsItem', {
+        var newItemWin = Alloy.createController('news/newsItem', {
             title : item.title.text,
             subtitle : item.subtitle.text,
             message : item.message.text
@@ -52,7 +53,6 @@ var initNewsTab = function() {
         method : "GET"
     };
     options.handleSuccessCallback = handleSuccessCallback;
-    Ti.API.info("111111111111");
     $.activityIndicator.show({message:" Loading..."});
     APICalls.request(NEWS_URL, options);
 };

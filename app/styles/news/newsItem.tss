@@ -1,6 +1,13 @@
-"#subtitle" : {
+"#subtitle": {
 	font: {
 		fontWeight: 'bold',
-		fontSize: 16
+		fontSize: 18,
+		left: 10,
+		top: 10
 	}
+}
+
+"#message": {
+	left: 10,
+	top: 10
 }

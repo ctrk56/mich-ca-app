@@ -3,3 +3,9 @@ var args = $.args;
 $.newsItemWindow.title = args.title || '';
 $.subtitle.text = args.subtitle || '';
 $.message.text = args.message || '';
+
+if(OS_ANDROID) {
+	$.newsItemWindow.addEventListener('android:back', function(){
+		$.newsItemWindow.close();
+	});
+} 

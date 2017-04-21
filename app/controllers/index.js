@@ -1,6 +1,6 @@
 Alloy.Globals.mainTab = $.mainTab;
 Alloy.CFG.tabGroup = $.mainTab;
-$.mainTab.exitOnClose = true;
+// $.mainTab.exitOnClose = true;
 $.mainTab.orientationModes = [Ti.UI.PORTRAIT];
 
 if (OS_ANDROID) {

@@ -8,18 +8,20 @@ var handleSuccessCallback = function(data) {
     aboutItems = [];
     var aboutInfo = JSON.parse(data).aboutus;
     _.map(aboutInfo, function(item) {
-        aboutItems.push({
-            properties: {
-                color: "black",
-                height: Ti.UI.SIZE
-            },
-            name: {text: item.name},
-            designation: {text: item.designation},
-            contact: {text: item.contact},
-            template : 'aboutusTemplate'
-        });
+    	if(item.active) {
+	        aboutItems.push({
+	            properties: {
+	                color: "black",
+	                height: Ti.UI.SIZE
+	            },
+	            name: {text: item.name},
+	            designation: {text: item.designation},
+	            contact: {text: item.contact},
+	            template : 'aboutusTemplate'
+	        });    		
+    	}
     });
-    if(aboutInfo.length > 0) {
+    if(aboutItems.length > 0) {
         var sections = Ti.UI.createListSection({});
         sections.setItems(aboutItems);
         $.aboutusList.setSections([sections]);

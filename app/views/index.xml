@@ -1,6 +1,7 @@
 <Alloy>
 	<TabGroup id="mainTab" icon="appicon.png">
 		<Require  src="news/news"/>
+		<Require  src="glt/glt"/>
 		<Require  src="grounds/grounds"/>
 		<Require  src="aboutus/aboutus"/>
 	</TabGroup>

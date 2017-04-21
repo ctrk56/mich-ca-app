@@ -1,11 +1,11 @@
 var APICalls = {};
 
 APICalls.request = function(uri, options) {
-    Ti.API.info("Request about to be sent to::: "+ uri);
+    // Ti.API.info("Request about to be sent to::: "+ uri);
     if(Ti.Network.online) {
         var xhr = Ti.Network.createHTTPClient({timeout: 60000});
         //FIXME: Below cert change should be removed
-        xhr.validatesSecureCertificate = false;
+        // xhr.validatesSecureCertificate = false;
         var requestSuccess = function(e) {
             var contentType = this.getResponseHeader('Content-Type');
             if (contentType == 'text/javascript') {

@@ -10,28 +10,30 @@ var handleSuccessCallback = function(data) {
     groundsItems = [];
     var grounds = JSON.parse(data).grounds;
     _.map(grounds, function(item) {
-        var url = item.address+ "+" + item.city + "+" + item.state + "+" + item.zip;
-        url=url.replace(" ", "+");
-        if(OS_IOS) {
-            url = APPLE_MAPS + url;
-        } else {
-            url = GOOGLE_MAPS + url;
-        }
-        groundsItems.push({
-            properties: {
-                color: "black",
-                accessoryTypeColor : "red",
-                height: Ti.UI.SIZE,
-                accessoryType: Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE,
-                url: url,
-            },
-            name: {text: item.name},
-            address: {text: item.address + ", "+ item.city+ ", " + item.state+ ", " + item.zip},
-            template : 'groundsTemplate',
-            link: {name: 'LINK'}
-        });
+    	if(item.active) {
+	        var url = item.address+ "+" + item.city + "+" + item.state + "+" + item.zip;
+	        url=url.replace(" ", "+");
+	        if(OS_IOS) {
+	            url = IOS_LINK + url;
+	        } else {
+	            url = ANDROID_LINK + url;
+	        }
+	        groundsItems.push({
+	            properties: {
+	                color: "black",
+	                accessoryTypeColor : "red",
+	                height: Ti.UI.SIZE,
+	                accessoryType: Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE,
+	                url: url,
+	            },
+	            name: {text: item.name},
+	            address: {text: item.address + ", "+ item.city+ ", " + item.state+ ", " + item.zip},
+	            template : 'groundsTemplate',
+	            link: {name: 'LINK'}
+	        });	
+    	}
     });
-    if(grounds.length > 0) {
+    if(groundsItems.length > 0) {
         var sections = Ti.UI.createListSection({});
         sections.setItems(groundsItems);
         $.groundsList.setSections([sections]);
