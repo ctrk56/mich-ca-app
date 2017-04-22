@@ -1,0 +1,16 @@
+<Alloy>
+	<Tab id="linksTab" title="Links">
+		<Window id="linksWindow" title="Links">
+			<ListView id="linksList" top="5">
+				<Templates>
+	                <ItemTemplate name="linksTemplate">
+	                	<View id="wrapper" bindId="wrapper">
+	                		<Label id="title" bindId="title" left="10"></Label>
+	                	</View>
+	                </ItemTemplate>
+	            </Templates>
+			</ListView>
+			<Widget id="activityIndicator" src="activityIndicator" />
+		</Window> 
+	</Tab>
+</Alloy>

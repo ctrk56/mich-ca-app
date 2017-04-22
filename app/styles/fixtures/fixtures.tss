@@ -1,0 +1,23 @@
+"#fixturesList": {
+	separatorColor: "#e3e4e4",
+	listSeparatorInsets: {
+		left: 0,
+		right: 0
+	},
+	color: 'black'
+}
+".matchLabel" : {
+	left: 10
+}
+
+".matchLabel[platform=ios]": {
+	font: {
+		fontSize: 14
+	}
+}
+
+".matchLabel[platform=android]": {
+	font: {
+		fontSize: 16
+	}
+}
