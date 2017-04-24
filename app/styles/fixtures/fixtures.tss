@@ -18,6 +18,9 @@
 
 ".matchLabel[platform=android]": {
 	font: {
-		fontSize: 16
+		fontSize: 18
 	}
+}
+"#searchbar[platform=ios]": {
+	barColor: "#c91326"
 }

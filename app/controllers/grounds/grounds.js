@@ -14,9 +14,9 @@ var handleSuccessCallback = function(data) {
 	        var url = item.address+ "+" + item.city + "+" + item.state + "+" + item.zip;
 	        url=url.replace(" ", "+");
 	        if(OS_IOS) {
-	            url = IOS_LINK + url;
+	            url = APPLE_MAPS + url;
 	        } else {
-	            url = ANDROID_LINK + url;
+	            url = GOOGLE_MAPS + url;
 	        }
 	        groundsItems.push({
 	            properties: {

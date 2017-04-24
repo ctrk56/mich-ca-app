@@ -1,21 +1,19 @@
 <Alloy>
-	<Tab id="fixturesTab" title="Fixtures">
-		<Window id="fixturesWindow" title="Fixtures">
-			<ListView id="fixturesList">
-				<SearchBar barColor="#c91326" />
-				<Templates>
-	                <ItemTemplate name="fixturesTemplate">
-	                	<View id="wrapper" bindId="wrapper">
-	                		<Label id="match" bindId="match" class="matchLabel"></Label>
-	                		<Label id="time" bindId="time" class="matchLabel"></Label>
-	                		<Label id="matchDate" bindId="matchDate" class="matchLabel"></Label>
-	                		<Label id="ground" bindId="ground" class="matchLabel"></Label>
-	                		<Label id="result" bingId="result" height="0" class="matchLabel"></Label>
-	                	</View>
-	                </ItemTemplate>
-	            </Templates>
-			</ListView>
-			<Widget id="activityIndicator" src="activityIndicator" />
-		</Window> 
-	</Tab>
+	<Window id="fixturesWindow" title="GLT Fixtures">
+		<ListView id="fixturesList">
+			<SearchBar id="searchBar" barColor="#c91326" />
+			<Templates>
+                <ItemTemplate name="fixturesTemplate">
+                	<View id="wrapper" bindId="wrapper">
+                		<Label id="match" bindId="match" class="matchLabel"></Label>
+                		<Label id="time" bindId="time" class="matchLabel"></Label>
+                		<Label id="matchDate" bindId="matchDate" class="matchLabel"></Label>
+                		<Label id="ground" bindId="ground" class="matchLabel"></Label>
+                		<Label id="result" bingId="result" height="0" class="matchLabel"></Label>
+                	</View>
+                </ItemTemplate>
+            </Templates>
+		</ListView>
+		<Widget id="activityIndicator" src="activityIndicator" />
+	</Window> 
 </Alloy>

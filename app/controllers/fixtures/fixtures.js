@@ -29,6 +29,10 @@ var createListSectionItems = function(items) {
             listItems.push(itemData);
         }
     });
+	if(OS_ANDROID) {
+		$.searchBar.hintText = "Search...";
+		$.searchBar.blur();
+	}
     return listItems;
 };
 
@@ -61,6 +65,11 @@ var initFixturesTab = function() {
     $.activityIndicator.show({message:" Loading..."});
     APICalls.request(FIXTURES_URL, options);
 };
-$.fixturesTab.addEventListener('selected', function() {
-    initFixturesTab();
-});
+
+if(OS_ANDROID) {
+	$.fixturesWindow.addEventListener('android:back', function(){
+		$.fixturesWindow.close();
+	});
+}
+
+initFixturesTab();

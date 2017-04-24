@@ -4,7 +4,6 @@ var args = $.args;
 var LINKS_URL = Alloy.Globals.URL.LINKS;
 var linksItems = [];
 
-
 var itemClickHandler = function(e) {
     var item = e.section.getItemAt(e.itemIndex);
     if (linksItems.length > 0 && item.title) {
@@ -30,7 +29,7 @@ var handleSuccessCallback = function(data) {
                     },
                     title: {text: item.title},
                     template : 'linksTemplate',
-                    wrapper: {height: Ti.UI.SIZE}
+                    wrapper: {height: Ti.UI.SIZE, top:5, bottom:5}
                 });
             } 
         });
@@ -51,6 +50,11 @@ var initLinksTab = function() {
     $.activityIndicator.show({message:" Loading..."});
     APICalls.request(LINKS_URL, options);
 };
-$.linksTab.addEventListener('selected', function() {
-    initLinksTab();
-});
+
+if(OS_ANDROID) {
+	$.linksWindow.addEventListener('android:back', function(){
+		$.linksWindow.close();
+	});
+}
+
+initLinksTab();

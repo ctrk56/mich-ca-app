@@ -1,0 +1,14 @@
+<Alloy>
+	<Window id="teamsWindow" title="GLT Teams">
+		<ListView id="teamsList">
+			<Templates>
+				<ItemTemplate name="teamsTemplate">
+					<View id="container" bindId="container" layout="horizontal" top="5" bottom="5">
+						<Label id="name" bindId="name"></Label>
+					</View>
+				</ItemTemplate>
+			</Templates>
+		</ListView>
+		<Widget id="activityIndicator" src="activityIndicator" />
+	</Window>
+</Alloy>
