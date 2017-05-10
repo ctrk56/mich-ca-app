@@ -1,17 +1,15 @@
 <Alloy>
-	<Tab id="gltTab" title="GLT">
-		<Window id="gltWindow" title="GLT 2017">
-			<ListView id="gltList">
-				<Templates>
-					<ItemTemplate name="gltTemplate">
-						<View id="container" bindId="container" layout="horizontal" top="5" bottom="5">
-	                		<!-- <ImageView id="icon" bindId="icon"></ImageView> -->
-							<Label id="menuItem" bindId="menuItem"></Label>
-						</View>
-					</ItemTemplate>
-				</Templates>
-			</ListView>
-			<Widget id="activityIndicator" src="activityIndicator" />
-		</Window>
-	</Tab>
+	<Window id="gltWindow" title="GLT">
+		<ListView id="gltList">
+			<Templates>
+				<ItemTemplate name="gltTemplate">
+					<View id="container" bindId="container" layout="horizontal" top="5" bottom="5">
+                		<!-- <ImageView id="icon" bindId="icon"></ImageView> -->
+						<Label id="menuItem" bindId="menuItem"></Label>
+					</View>
+				</ItemTemplate>
+			</Templates>
+		</ListView>
+		<Widget id="activityIndicator" src="activityIndicator" />
+	</Window>
 </Alloy>

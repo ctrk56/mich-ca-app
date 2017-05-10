@@ -23,10 +23,6 @@
 	color:'white'
 }
 
-"#ai[platform=android]":{
+"#ai":{
 	style:Ti.UI.ActivityIndicatorStyle.BIG
-}
-
-"#ai[platform=ios]":{
-	style:Ti.UI.iPhone.ActivityIndicatorStyle.BIG
 }

@@ -1,0 +1,12 @@
+"#tournamentsList": {
+	separatorColor: "#e3e4e4",
+	listSeparatorInsets: {
+		left: 0,
+		right: 0
+	},
+	color: 'black'
+}
+
+"#tournamentsTab[platform=ios]": {
+	icon : "images/icons/tournaments.png"
+}

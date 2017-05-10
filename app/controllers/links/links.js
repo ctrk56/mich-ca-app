@@ -1,8 +1,10 @@
 var APICalls = require("apiCalls");
 var Util = require("util");
 var args = $.args;
-var LINKS_URL = Alloy.Globals.URL.LINKS;
+var LINKS_URL = args.url||"";
 var linksItems = [];
+
+$.linksWindow.title = args.title || "Links";
 
 var itemClickHandler = function(e) {
     var item = e.section.getItemAt(e.itemIndex);

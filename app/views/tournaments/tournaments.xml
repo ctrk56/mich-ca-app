@@ -1,0 +1,16 @@
+<Alloy>
+	<Tab id="tournamentsTab" title="Tournaments">
+		<Window id="tournamentsWindow" title="Tournaments 2017">
+			<ListView id="tournamentsList">
+				<Templates>
+					<ItemTemplate name="tournamentsTemplate">
+						<View id="container" bindId="container" layout="horizontal" top="5" bottom="5">
+							<Label id="menuItem" bindId="menuItem"></Label>
+						</View>
+					</ItemTemplate>
+				</Templates>
+			</ListView>
+			<Widget id="activityIndicator" src="activityIndicator" />
+		</Window>
+	</Tab>
+</Alloy>

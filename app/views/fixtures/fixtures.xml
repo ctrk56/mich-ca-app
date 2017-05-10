@@ -1,5 +1,5 @@
 <Alloy>
-	<Window id="fixturesWindow" title="GLT Fixtures">
+	<Window id="fixturesWindow">
 		<ListView id="fixturesList">
 			<SearchBar id="searchBar" barColor="#c91326" />
 			<Templates>

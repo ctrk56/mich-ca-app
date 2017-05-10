@@ -6,3 +6,14 @@
 	},
 	color: 'black'
 }
+
+"#name[platform=ios]": {
+	font: {
+		fontSize: 14
+	}
+}
+"#name[platform=android]": {
+	font: {
+		fontSize: 18
+	}
+}

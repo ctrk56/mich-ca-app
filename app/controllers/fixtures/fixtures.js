@@ -1,8 +1,8 @@
 var APICalls = require("apiCalls");
 var Util = require("util");
 var args = $.args;
-var FIXTURES_URL = Alloy.Globals.URL.FIXTURES;
-var fixtureItems = [];
+var FIXTURES_URL = args.url || "";
+$.fixturesWindow.title = args.title || "Fixtures";
 
 var createListSectionItems = function(items) {
     var listItems = [];
@@ -37,7 +37,7 @@ var createListSectionItems = function(items) {
 };
 
 var handleSuccessCallback = function(data) {
-    fixtureItems = [];
+    var fixtureItems = [];
     var fixtures = JSON.parse(data).fixtures;
     if (fixtures.length > 0) {
         var groupedfixtures = _.groupBy(fixtures, 'matchDate');
@@ -50,8 +50,10 @@ var handleSuccessCallback = function(data) {
             var section = Ti.UI.createListSection({});
             section.setHeaderTitle(" "+date);
             var items = createListSectionItems(groupedfixtures[date]);
-            section.setItems(items);
-            $.fixturesList.appendSection(section);
+            if(items.length > 0) {
+	            section.setItems(items);
+	            $.fixturesList.appendSection(section);
+            }
         });
     }
     $.activityIndicator.hide();

@@ -15,6 +15,7 @@ var handleSuccessCallback = function(data) {
 	                color : "black",
 	                accessoryTypeColor : "red",
 	                accessoryType: Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE,
+	                height: Ti.UI.SIZE
 	            },
 	            subtitle : { text : item.subtitle },
 	            title : { text : item.title },
