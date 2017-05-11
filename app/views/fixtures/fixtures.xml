@@ -1,7 +1,7 @@
 <Alloy>
 	<Window id="fixturesWindow">
 		<ListView id="fixturesList">
-			<SearchBar id="searchBar" barColor="#c91326" />
+			<SearchBar id="searchBar" barColor="#c91326" visible="false" height="0"/>
 			<Templates>
                 <ItemTemplate name="fixturesTemplate">
                 	<View id="wrapper" bindId="wrapper">

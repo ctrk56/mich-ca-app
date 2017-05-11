@@ -1,6 +1,7 @@
 <Alloy>
 	<Window id="teamsWindow">
 		<ListView id="teamsList">
+			<SearchBar id="searchBar" barColor="#c91326" visible="false" height="0"/>
 			<Templates>
 				<ItemTemplate name="teamsTemplate">
 					<View id="container" bindId="container" layout="horizontal" top="5" bottom="5">
