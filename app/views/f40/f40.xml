@@ -1,5 +1,5 @@
 <Alloy>
-	<Window id="f40Window" title="GLT">
+	<Window id="f40Window">
 		<ListView id="f40List">
 			<Templates>
 				<ItemTemplate name="f40Template">

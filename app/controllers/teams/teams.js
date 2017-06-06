@@ -1,26 +1,29 @@
-var APICalls = require("apiCalls");
-var Util = require("util");
 var args = $.args;
-var TEAMS_URL = args.url || ""; 
-
+var dataLoad = args.dataLoad || '';
 $.teamsWindow.title = args.title || "Teams";
 
-var createListSectionItems = function(teams) {
+var createListSectionItems = function(teams, poolName) {
 	var listItems = [];
 	_.map(teams, function(item) {
-		if(item.active) {
-			var teamData = {
-				properties: {
-					color: 'black',
-					height: Ti.UI.SIZE
-				},
-				name: {text: item.name + " (" + item.code+ ")", left: 10},
-				container: {height: Ti.UI.SIZE, width: Ti.UI.FILL},
-				template: 'teamsTemplate'
-			};
-			teamData.properties.searchableText = item.name + " " + item.code + " " + item.pool;
-			listItems.push(teamData); 
+        var key = "full_name"; 
+	    
+	    var teamName = item.team.full_name.split(",")[0];
+	    var teamCode = item.team.full_name.split(",")[1].trim().split(' ')[0];
+		var teamData = {
+			properties: {
+				color: 'black',
+				height: Ti.UI.SIZE
+			},
+			name: {text: teamName + " (" + teamCode+ ")", left: 10},
+			container: {height: Ti.UI.SIZE, width: Ti.UI.FILL},
+			template: 'teamsTemplate'
+		};
+		teamData.properties.searchableText = teamName + " " + teamCode;
+		if(poolName) {
+		    teamData.properties.searchableText = teamData.properties.searchableText + " " + poolName;
 		}
+		
+		listItems.push(teamData); 
 	});
 	if(OS_ANDROID) {
 		$.searchBar.hintText = "Search...";
@@ -29,38 +32,43 @@ var createListSectionItems = function(teams) {
 	return listItems;
 };
 
-var handleSuccessCallback = function(data) {
-	var pools = [];
-    var teams = JSON.parse(data).teams;
-    if(teams.length > 0) {
-		var groupedPools = _.groupBy(teams, 'pool');
-		var poolNames = [];
-		for(var k in groupedPools) {
-			poolNames.push(k);
-		}
-		if(poolNames.length > 0) {
-			poolNames.sort();
-			$.teamsList.setSections([]);
-			_.map(poolNames, function(poolName){
-				var section = Ti.UI.createListSection({});
-				section.setHeaderTitle(" " + poolName);
-				var items = createListSectionItems(groupedPools[poolName]);
-				if(items.length > 0) {
-					section.setItems(items);
-					$.teamsList.appendSection([section]);
-				}
-			});
-		}	
+var handleSuccessCallback = function() {
+    if(dataLoad) {
+        $.teamsList.setSections([]);
+        
+		var groupedByPools = _.groupBy(dataLoad, 'pool');
+        if(groupedByPools) {
+            var teamsByPool = [];
+            for(var k in groupedByPools) {
+                teamsByPool.push(k);
+            }
+            _.map(teamsByPool, function(pool) {
+                var section = Ti.UI.createListSection({});
+                if(pool == null) {
+                    var poolName = " Pool " + pool;
+                    section.setHeaderTitle(" " + poolName);
+                }
+                var items = [];
+                _.map(groupedByPools[pool], function(teamsInPool){
+                    items = createListSectionItems(groupedByPools[pool], poolName);
+                });
+                if(items.length > 0) {
+                    section.setItems(items);
+                    $.teamsList.appendSection(section);
+                }
+            });
+        } else {
+            var sections = Ti.UI.createListSection({});
+            sections.setItems(createListSectionItems(dataLoad));
+            $.teamsList.setSections([sections]);
+        }
     }
     $.activityIndicator.hide();
 };
 
 var initTeams = function() {
-    var options = {
-        method : "GET"
-    };
-    options.handleSuccessCallback = handleSuccessCallback;
-    APICalls.request(TEAMS_URL, options);
+    $.activityIndicator.show({message:" Loading..."});
+    handleSuccessCallback();
 };
 
 if(OS_ANDROID) {

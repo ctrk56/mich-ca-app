@@ -20,7 +20,7 @@ Alloy.Globals.URL = {
   GLT_TEAMS: "https://ctrk56.github.io/mich-ca/glt_2017_teams.json",
   F40_TEAMS: "https://ctrk56.github.io/mich-ca/f40_2017_teams.json",
   T20_TEAMS: "https://ctrk56.github.io/mich-ca/t20_2017_teams.json",
-  TOURNAMENTS: "https://ctrk56.github.io/mich-ca/tournaments_2017.json"
+  TOURNAMENTS: "https://ctrk56.github.io/mich-ca/2017/tournaments.json"
 };
 
 

@@ -1,7 +1,6 @@
 var APICalls = require("apiCalls");
 var Util = require("util");
 var args = $.args;
-var LINKS_URL = args.url||"";
 var linksItems = [];
 
 $.linksWindow.title = args.title || "Links";
@@ -50,7 +49,7 @@ var initLinksTab = function() {
     };
     options.handleSuccessCallback = handleSuccessCallback;
     $.activityIndicator.show({message:" Loading..."});
-    APICalls.request(LINKS_URL, options);
+    APICalls.request(Alloy.Globals.URL.LINKS, options);
 };
 
 if(OS_ANDROID) {

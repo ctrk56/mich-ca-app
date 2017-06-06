@@ -9,14 +9,17 @@ var handleSuccessCallback = function(data) {
 	var tournaments = JSON.parse(data).tournaments;
 	if(tournaments.length > 0) {
 		_.map(tournaments, function(item){	
-			if(item.active) {
+			if(item.published) {
+			    var tName = item.name.replace("Mich-CA ", "");
 				tournamentsItems.push({
 					properties : {
 		                color : "black",
 		                accessoryTypeColor : "red",
 		                accessoryType: Titanium.UI.LIST_ACCESSORY_TYPE_DISCLOSURE,
+		                id: item.id
 					},
-					menuItem : {text: item.tournament, left: 5, font: {fontWeight: 'bold', fontSize: 20}},
+					menuItem : {text: tName, left: 5, font: {fontWeight: 'bold', fontSize: 20}},
+					dataLoad: item.seasons || {},
 					template : 'tournamentsTemplate'
 				});
 			}
@@ -32,19 +35,25 @@ var handleSuccessCallback = function(data) {
 
 var itemClickHandler = function(e) {
     var item = e.section.getItemAt(e.itemIndex);
-	if(tournamentsItems.length > 0 && item.menuItem && item.menuItem.text == "GLT") {
-		var tournamentView = Alloy.createController('glt/glt', {}).getView();
+	if(tournamentsItems.length > 0 && item.menuItem && item.menuItem.text == "Great Lakes Tournament") {
+		var tournamentView = Alloy.createController('t20/t20', {"dataLoad": item.dataLoad, "title": item.menuItem.text}).getView();
         Alloy.CFG.tabGroup.getActiveTab().open(tournamentView);
-	} else if(tournamentsItems.length > 0 && item.menuItem && item.menuItem.text == "T20") {
-		var tournamentView = Alloy.createController('t20/t20', {}).getView();
+	} else if(tournamentsItems.length > 0 && item.menuItem && item.menuItem.text == "T20 Plate") {
+		var tournamentView = Alloy.createController('t20/t20', {"dataLoad": item.dataLoad, "title": item.menuItem.text}).getView();
         Alloy.CFG.tabGroup.getActiveTab().open(tournamentView);
-	} else if(tournamentsItems.length > 0 && item.menuItem && item.menuItem.text == "F40") {
-		var tournamentView = Alloy.createController('f40/f40', {}).getView();
+	} else if(tournamentsItems.length > 0 && item.menuItem && item.menuItem.text == "T20 Trophy") {
+        var tournamentView = Alloy.createController('t20/t20', {"dataLoad": item.dataLoad, "title": item.menuItem.text}).getView();
+        Alloy.CFG.tabGroup.getActiveTab().open(tournamentView);
+    } else if(tournamentsItems.length > 0 && item.menuItem && item.menuItem.text == "T20 Shield") {
+        var tournamentView = Alloy.createController('t20/t20', {"dataLoad": item.dataLoad, "title": item.menuItem.text}).getView();
+        Alloy.CFG.tabGroup.getActiveTab().open(tournamentView);
+    } else if(tournamentsItems.length > 0 && item.menuItem && item.menuItem.text == "Summer F40") {
+		var tournamentView = Alloy.createController('t20/t20', {"dataLoad": item.dataLoad, "title": item.menuItem.text}).getView();
         Alloy.CFG.tabGroup.getActiveTab().open(tournamentView);
 	} else {
 		var dialog = Ti.UI.createAlertDialog({
-            title: "Information",
-            message: "We are still working on \""+ item.menuItem.text+"\"?",
+            title: item.menuItem.text,
+            message: "Updates coming soon.",
             buttonNames: ['Ok'],
             cancel: 1
         });

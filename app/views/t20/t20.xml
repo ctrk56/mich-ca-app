@@ -1,9 +1,9 @@
 <Alloy>
-	<Window id="t20Window" title="T20">
+	<Window id="t20Window">
 		<ListView id="t20List">
 			<Templates>
 				<ItemTemplate name="t20Template">
-					<View id="container" bindId="container" layout="horizontal" top="5" bottom="5">
+					<View id="container" bindId="container" layout="horizontal" top="5">
                 		<!-- <ImageView id="icon" bindId="icon"></ImageView> -->
 						<Label id="menuItem" bindId="menuItem"></Label>
 					</View>

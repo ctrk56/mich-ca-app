@@ -1,0 +1,15 @@
+<Alloy>
+	<Window id="standingsWindow">
+		<ListView id="standingsList">
+			<Templates>
+				<ItemTemplate name="standingsTemplate">
+					<View id="container" bindId="container" layout="vertical" top="5" bottom="5">
+						<Label id="rank" bindId="rank"></Label>
+						<Label id="name" bindId="name"></Label>
+					</View>
+				</ItemTemplate>
+			</Templates>
+		</ListView>
+		<Widget id="activityIndicator" src="activityIndicator" />
+	</Window>
+</Alloy>

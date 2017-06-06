@@ -1,5 +1,5 @@
 <Alloy>
-	<Window id="gltWindow" title="GLT">
+	<Window id="gltWindow">
 		<ListView id="gltList">
 			<Templates>
 				<ItemTemplate name="gltTemplate">
