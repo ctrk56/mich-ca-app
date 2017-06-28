@@ -15,10 +15,15 @@ var createListSectionItems = function(standings, poolName) {
                 color: 'black',
                 height: Ti.UI.SIZE,
             },
-            name: {text: standingsName + " (" + standingsCode+ ")", left: 10},
-            rank: {text: "Rank: "+ item.rank, left: 10, font: {fontWeight: 'bold'}},
+            name: {text: "Team: " + standingsName + " (" + standingsCode+ ")", left: 10, font: {fontWeight: 'bold'}},
+            rank: {text: "Rank: "+ item.rank, left: 10},
+            played: {text: "Played: " + item.stats.played, left: 10},
+            won: {text: "Won: "+ item.stats.won, left: 10},
+            lost: {text: "Lost: "+ item.stats.lost, left: 10},
+            points: {text: "Points: " + item.stats.total_points, left: 10},
+            netRunrate: {text: "Net Run Rate: " + item.stats.net_run_rate, left: 10},
             container: {height: Ti.UI.SIZE, width: Ti.UI.FILL},
-            template: 'standingsTemplate'
+            template: 'standingsTemplate',
         };
         standingsData.properties.searchableText = standingsName + " " + standingsCode;
         if(poolName) {
@@ -27,10 +32,6 @@ var createListSectionItems = function(standings, poolName) {
         
         listItems.push(standingsData); 
     });
-    if(OS_ANDROID) {
-        $.searchBar.hintText = "Search...";
-        $.searchBar.blur();
-    }
     return listItems;
 };
 

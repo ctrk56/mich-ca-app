@@ -7,12 +7,12 @@
 	color: 'black'
 }
 
-"#name[platform=ios]": {
+".standingsLabel[platform=ios]": {
 	font: {
 		fontSize: 14
 	}
 }
-"#name[platform=android]": {
+"standingsLabel[platform=android]": {
 	font: {
 		fontSize: 18
 	}

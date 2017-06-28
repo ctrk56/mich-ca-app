@@ -4,8 +4,13 @@
 			<Templates>
 				<ItemTemplate name="standingsTemplate">
 					<View id="container" bindId="container" layout="vertical" top="5" bottom="5">
-						<Label id="rank" bindId="rank"></Label>
-						<Label id="name" bindId="name"></Label>
+						<Label id="name" bindId="name" class="standingsLabel"></Label>
+						<Label id="rank" bindId="rank" class="standingsLabel"></Label>
+						<Label id="played" bindId="played" class="standingsLabel"></Label>
+						<Label id="won" bindId="won" class="standingsLabel"></Label>
+						<Label id="lost" bindId="lost" class="standingsLabel"></Label>
+						<Label id="points" bindId="points" class="standingsLabel"></Label>
+						<Label id="netRunrate" bindId="netRunrate" class="standingsLabel"></Label>
 					</View>
 				</ItemTemplate>
 			</Templates>
